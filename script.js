@@ -17,9 +17,13 @@ function countdown() {
   const seconds = Math.floor(totalSeconds) % 60;
 
   daysView.textContent = days;
-  hoursView.textContent = hours;
-  minutesView.textContent = minutes;
-  secondsView.textContent = seconds;
+  hoursView.textContent = timeFormat(hours);
+  minutesView.textContent = timeFormat(minutes);
+  secondsView.textContent = timeFormat(seconds);
+}
+
+function timeFormat(time) {
+  return time < 10 ? `0${time}` : time;
 }
 
 countdown();
